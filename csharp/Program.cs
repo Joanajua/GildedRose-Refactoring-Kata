@@ -34,20 +34,22 @@ namespace csharp
                     Quality = 49
                 },
 				// this conjured item does not work properly yet
-				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6},
             };
 
             var app = new GildedRose(Items);
 
 
-            for (var i = 0; i < 31; i++)
+            for (var i = 0; i < 30; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
-                for (var j = 0; j < Items.Count; j++)
+
+                foreach (var product in Items)
                 {
-                    System.Console.WriteLine(Items[j]);
+                   Console.WriteLine(product);
                 }
+              
                 Console.WriteLine("");
                 app.UpdateQuality();
             }
